@@ -15,6 +15,9 @@ mongoose.connect(db, function (err) {
 });
 
 router.get('/posts', function (err, res) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
     console.log('Req posts');
     post.find({})
         .exec(function (err, posts) {
