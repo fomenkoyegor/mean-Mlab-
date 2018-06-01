@@ -28,7 +28,23 @@ router.get('/posts', function (err, res) {
                 console.log(posts);
             }
         })
-})
+});
+
+router.get('/details/:id', function (req, res) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  console.log('Req posts');
+  post.findById(req.params.id)
+    .exec(function (err, post) {
+      if (err) {
+        console.log('err get the post')
+      } else {
+        res.json(post);
+        console.log(post);
+      }
+    })
+});
 
 
 module.exports = router;
