@@ -7,8 +7,8 @@ import {Post} from './post';
 
 @Injectable()
 export class PostService {
-  readonly URL_POSTS = 'http://localhost:3000/api/posts';
-  readonly URL_POST_BY_ID = 'http://localhost:3000/api/details/';
+  readonly URL_POSTS = '/api/posts/';
+  readonly URL_POST_BY_ID = '/api/details/';
   result: any;
 
   constructor(private http: Http) {
@@ -31,11 +31,8 @@ export class PostService {
     const options = new RequestOptions({
       headers: headers
     });
-    return this.http.post(
-      this.URL_POSTS,
-      JSON.stringify(post),
-      options
-    ).map(res => this.result = res.json());
+    return this.http.post(this.URL_POSTS, JSON.stringify(post), options)
+      .map(res => this.result = res.json());
   }
 
 
