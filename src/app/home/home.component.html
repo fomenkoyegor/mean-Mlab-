@@ -7,7 +7,7 @@
       <div class="post-container">
         <div class="row">
           <h4  class="post-title">{{post.title}}</h4>
-          <p>{{post.description}}</p>
+          <p>{{post.description | length:40}}</p>
           <a routerLink="/details/{{post._id}}" class="success button">more info</a>
           <a href="{{post.url}}" target="_blank" class="button">Go to</a>
         </div>
