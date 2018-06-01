@@ -1,4 +1,16 @@
 .container{
   margin-top: 20px;
-
+  .posts{
+    margin-top: 5px;
+    -webkit-box-shadow: -1px 7px 15px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 7px 15px -5px rgba(0,0,0,0.75);
+    box-shadow: -1px 7px 15px -5px rgba(0,0,0,0.75);
+    transition: 1s;
+    & *{
+      text-align: center;
+    }
+    &:hover{
+      background:rgba(53,91,128,0.54);
+    }
+  }
 }

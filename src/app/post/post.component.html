@@ -2,13 +2,31 @@
 <div class="container">
   <form [formGroup]="postForm" (submit)="addPost(postForm.value)">
     <div class="row">
+      <h4 style="color: orangered">
+        <span
+          *ngIf="!postForm.controls['title'].valid
+               && postForm.controls['title'].touched"
+        > title min 5 max 80 </span>
+
+        <span
+          *ngIf="!postForm.controls['url'].valid
+               && postForm.controls['url'].touched"
+        > url must req </span>
+
+        <span
+          *ngIf="!postForm.controls['description'].valid
+               && postForm.controls['description'].touched"
+        > desc must req </span>
+      </h4>
       <label for="title">title</label>
+
       <input
         type="text"
         id="title"
         name="title"
         [formControl]="postForm.controls['title']"
         required>
+
 
       <label for="url">url</label>
       <input
@@ -17,6 +35,7 @@
         name="url"
         [formControl]="postForm.controls['url']"
         required>
+
 
       <label for="description">description</label>
       <textarea
