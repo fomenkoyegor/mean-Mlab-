@@ -50,7 +50,9 @@ router.get('/details/:id', function (req, res) {
 router.post('/posts', function (req, res) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Credentials', 'true');
+
   console.log('posting');
   let newPost = new post();
   newPost.title = req.body.title;

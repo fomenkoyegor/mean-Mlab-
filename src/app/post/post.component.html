@@ -1,3 +1,38 @@
-<p>
-  post works!
-</p>
+<br>
+<div class="container">
+  <form [formGroup]="postForm" (submit)="addPost(postForm.value)">
+    <div class="row">
+      <label for="title">title</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        [formControl]="postForm.controls['title']"
+        required>
+
+      <label for="url">url</label>
+      <input
+        type="text"
+        id="url"
+        name="url"
+        [formControl]="postForm.controls['url']"
+        required>
+
+      <label for="description">description</label>
+      <textarea
+        type="text"
+        id="description"
+        name="description"
+        [formControl]="postForm.controls['description']"
+        required>
+      </textarea>
+      <br>
+      <input
+        type="submit"
+        class="button"
+        [disabled]="!postForm.valid"
+      >
+    </div>
+  </form>
+</div>
+
