@@ -9,7 +9,7 @@ import {Component, OnInit} from '@angular/core';
 export class NavComponent implements OnInit {
 
 
-  constructor(public service: PostService) {
+  constructor() {
   }
 
   ngOnInit() {
