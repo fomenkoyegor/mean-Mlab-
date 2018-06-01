@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
 import { LengthPipe } from './length.pipe';
 import { PostComponent } from './post/post.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 
@@ -29,7 +30,8 @@ import { PostComponent } from './post/post.component';
     AppRoutingModule,
     HttpModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]
